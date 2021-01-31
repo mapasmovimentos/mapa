@@ -3,11 +3,11 @@
               (mapClick)="openInfoWindow(markerElement, marker)"
               *ngFor="let marker of markers"
               [options]="marker.option"></map-marker>
-  <map-info-window>{{info}}</map-info-window>
+  <map-info-window (closeclick)="slideOut()">{{info}}</map-info-window>
 </google-map>
 
-<content (ready)="onReady($event)" (stateChange)="onStateChange($event)" class="slideout ">
-  <button>Fechar</button>
+<content (ready)="onReady($event)" (stateChange)="onStateChange($event)" class="slideout {{shown}}">
+  <button (click)="slideOut()">Fechar</button>
   <youtube-player
                 *ngIf="videoId"
                 [videoId]="videoId"></youtube-player>

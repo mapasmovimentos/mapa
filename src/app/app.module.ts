@@ -5,6 +5,8 @@ import {AppComponent} from './app.component';
 import {GoogleMapsModule} from '@angular/google-maps';
 import {YouTubePlayerModule} from '@angular/youtube-player';
 
+import {HttpClientModule} from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -12,7 +14,8 @@ import {YouTubePlayerModule} from '@angular/youtube-player';
   imports: [
     BrowserModule,
     GoogleMapsModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
