@@ -6,9 +6,9 @@
   <map-info-window (closeclick)="slideOut()">{{info}}</map-info-window>
 </google-map>
 
-<content (ready)="onReady($event)" (stateChange)="onStateChange($event)" class="slideout {{shown}}">
+<content class="slideout {{shown}}">
   <button (click)="slideOut()">Fechar</button>
-  <youtube-player
+  <youtube-player (ready)="onReady($event)" (stateChange)="onStateChange($event)"
                 *ngIf="videoId"
                 [videoId]="videoId"></youtube-player>
   <img class="pin-img" *ngIf="cover" [src]="cover" />

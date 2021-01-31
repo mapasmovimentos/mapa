@@ -16,11 +16,10 @@ import { MapService } from './services/map.service';
   providedIn: 'root'
 })
 
+
 export class AppComponent implements OnInit {
 
-  constructor(private mapService: MapService){
-
-  }
+  constructor(private mapService: MapService){}
 
   @ViewChild(MapInfoWindow) infoWindow!: MapInfoWindow;
   @ViewChild(GoogleMap) map!: GoogleMap;
@@ -48,17 +47,16 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-      let obj: any;
 
-      this.mapService.getWixPins().subscribe(
-        pins => {
-          pins.items.map( item => {
+    this.mapService.getWixPins().subscribe(
+          (pins:any) => {
+          pins.items.map( (item: any) => {
             item.option = {title: item.title, position: {lat: item.lat, lng: item.lng}};
             item.info = item.title;
             item.cover = this.getFullImageURL(item.cover);
             item.showPin = item.title && item.lat && item.lng;
           });
-          this.markers = pins.items.filter(item => {
+          this.markers = pins.items.filter((item: any) => {
             return item.showPin;
           });
         },
@@ -66,18 +64,6 @@ export class AppComponent implements OnInit {
           console.log("erro:", err);
         }
       )
-
-      // obj.items.forEach((element: any) => {
-      //   if(element.cover){
-      //     element.cover = this.getFullImageURL(element.cover);
-      //   }
-      //   this.markers.push({
-      //     option: {title: element.title, position: {lat: element.lat, lng: element.lng}},
-      //     videoId: element.videoId,
-      //     info: element.title,
-      //     html: element.info,
-      //     cover: element.cover
-      //   });
 
       const tag = document.createElement('script');
       tag.src = 'https://www.youtube.com/iframe_api';
@@ -102,9 +88,15 @@ export class AppComponent implements OnInit {
   slideOut(): void{
     this.shown = "off";
     this.infoWindow.close();
+
+    if (this.youtubePlayer
+      && this.youtubePlayer.getPlayerState() === YT.PlayerState.PLAYING) {
+      this.youtubePlayer.stopVideo();
+    }
   }
 
   openInfoWindow(markerElement: MapMarker, marker: MarkerObject): void {
+
     if (this.youtubePlayer
       && this.youtubePlayer.getPlayerState() === YT.PlayerState.PLAYING) {
       this.youtubePlayer.stopVideo();
@@ -117,6 +109,7 @@ export class AppComponent implements OnInit {
     this.shown = "on";
 
     this.infoWindow.open(markerElement);
+
   }
 
   onReady(event: YT.PlayerEvent): void {
@@ -124,7 +117,7 @@ export class AppComponent implements OnInit {
   }
 
   onStateChange(event: YT.OnStateChangeEvent): void {
-    if (event.data === YT.PlayerState.CUED) {
+    if (event.data === YT.PlayerState.CUED && this.shown === "on") {
       event.target.playVideo();
     }
   }

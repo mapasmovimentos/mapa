@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
-import { MarkerObject } from '../models/marker-object.interface';
-import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
