@@ -1,0 +1,84 @@
+:host {
+  font-family: -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif;
+  line-height: 1.5;
+  overflow: hidden;
+  padding: 0;
+}
+
+ul, ol{
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block !important;
+  list-style-position: inside;
+}
+
+google-map{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+content {
+  display: block;
+  padding: 10px;
+}
+
+youtube-player {
+  height: 100%;
+  width: 80%;
+  justify-self: center;
+}
+
+.pin-img img{
+  display: block;
+  height: 200px;
+}
+
+button {
+  background-color: #fff;
+  border: 1px solid #0363c8;
+  border-radius: 3px;
+  color: #0363c8;
+  font-family: inherit;
+  font-size: .75rem;
+  font-weight: 700;
+  padding: .5em 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  float: right;
+  display: block;
+}
+
+button:hover {
+  background-image: linear-gradient(to right, #0363c8, #0391e2);
+  color: #fff;
+}
+
+.slideout {
+  background: linear-gradient(to bottom, rgba(0, 51, 81, 0.8) 0%, rgba(29, 10, 58, 0.8) 100%);
+  color: #fff;
+  height: 100%;
+  min-height: 100%;
+  padding: 1em;
+  position: absolute;
+  right: 0px;
+  top: 0;
+  transition-duration: 0.2s;
+  width: 670px;
+}
+
+.pin-info {
+  padding: 2%;
+  position: relative;
+  display: block;
+  margin-top: 50px;
+}
