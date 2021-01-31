@@ -6,8 +6,13 @@
   <map-info-window>{{info}}</map-info-window>
 </google-map>
 
-<content  (ready)="onReady($event)" (stateChange)="onStateChange($event)">
-
+<content (ready)="onReady($event)" (stateChange)="onStateChange($event)" class="slideout ">
+  <button>Fechar</button>
+  <youtube-player
+                *ngIf="videoId"
+                [videoId]="videoId"></youtube-player>
+  <img class="pin-img" *ngIf="cover" [src]="cover" />
+  <div class="pin-info" *ngIf="html" [innerHTML]="html"></div>
 </content>
 
 <div class="root"></div>

@@ -98,7 +98,7 @@ export class AppComponent implements OnInit {
     this.html = marker.html;
     this.cover = marker.cover;
 
-    console.log(this);
+    alert("Boo!");
 
     this.infoWindow.open(markerElement);
   }

@@ -38,7 +38,7 @@ youtube-player {
   justify-self: center;
 }
 
-.pin-img img{
+.pin-img{
   display: block;
   height: 200px;
 }
@@ -70,10 +70,14 @@ button:hover {
   min-height: 100%;
   padding: 1em;
   position: absolute;
-  right: 0px;
+  right: -670px;
   top: 0;
   transition-duration: 0.2s;
   width: 670px;
+}
+
+.slideout.on{
+  right: 0;
 }
 
 .pin-info {
