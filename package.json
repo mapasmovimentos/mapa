@@ -1,0 +1,42 @@
+{
+  "name": "locationvideo",
+  "version": "0.0.1",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "build-prod": "ng build --prod --base-href /locationvideo/",
+    "postbuild-prod": "bread-compressor dist/locationvideo",
+    "lint": "ng lint"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "latest",
+    "@angular/common": "latest",
+    "@angular/compiler": "latest",
+    "@angular/core": "latest",
+    "@angular/forms": "latest",
+    "@angular/google-maps": "latest",
+    "@angular/platform-browser": "latest",
+    "@angular/platform-browser-dynamic": "latest",
+    "@angular/router": "latest",
+    "@angular/youtube-player": "latest",
+    "axios": "^0.21.1",
+    "rxjs": "latest",
+    "storyblok-js-client": "^3.3.1",
+    "tslib": "latest",
+    "zone.js": "^0.10.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^0.1100.6",
+    "@angular/cli": "latest",
+    "@angular/compiler-cli": "latest",
+    "@angular/language-service": "latest",
+    "@types/node": "latest",
+    "@types/googlemaps": "3.39.14",
+    "bread-compressor-cli": "latest",
+    "codelyzer": "latest",
+    "tslint": "latest",
+    "typescript": "^4.0.3"
+  }
+}
