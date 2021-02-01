@@ -51,7 +51,18 @@ export class AppComponent implements OnInit {
     this.mapService.getWixPins().subscribe(
           (pins:any) => {
           pins.items.map( (item: any) => {
-            item.option = {title: item.title, position: {lat: item.lat, lng: item.lng}};
+            item.option = {
+              title: item.title,
+              position: {lat: item.lat, lng: item.lng},
+              icon: {
+                path: google.maps.SymbolPath.CIRCLE,
+                scale: 5,
+                fillColor: "#F00",
+                fillOpacity: 0.9,
+                strokeWeight: 0.4
+              }
+            };
+            item.clickable = true;
             item.info = item.title;
             item.cover = this.getFullImageURL(item.cover);
             item.showPin = item.title && item.lat && item.lng;
@@ -61,7 +72,7 @@ export class AppComponent implements OnInit {
           });
         },
         err => {
-          console.log("erro:", err);
+          console.log("error:", err);
         }
       )
 
@@ -97,6 +108,8 @@ export class AppComponent implements OnInit {
 
   openInfoWindow(markerElement: MapMarker, marker: MarkerObject): void {
 
+    console.log(this.markers);
+
     if (this.youtubePlayer
       && this.youtubePlayer.getPlayerState() === YT.PlayerState.PLAYING) {
       this.youtubePlayer.stopVideo();
@@ -110,8 +123,17 @@ export class AppComponent implements OnInit {
 
     this.infoWindow.open(markerElement);
 
-  }
+    markerElement.marker?.setIcon({
+      path: google.maps.SymbolPath.CIRCLE,
+      scale: 8,
+      fillColor: "#F00",
+      fillOpacity: 0.9,
+      strokeWeight: 10,
+      strokeColor: "#FFF",
+      strokeOpacity: 0.5
+    })
 
+  }
   onReady(event: YT.PlayerEvent): void {
     event.target.playVideo();
   }

@@ -18,7 +18,7 @@ export class MapService {
   }
 
   getMapConfig() {
-    return this.http.get(this.baseUrl+'Config');
+    return this.http.get(this.baseUrl+'mapconfig');
   }
 
 }

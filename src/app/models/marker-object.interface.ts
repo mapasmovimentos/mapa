@@ -3,5 +3,7 @@ export interface MarkerObject {
   videoId: string,
   info: string,
   html: string,
-  cover: string
+  cover: string,
+  clickable: boolean,
+  animation: google.maps.Animation.DROP
 }
