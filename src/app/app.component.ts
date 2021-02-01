@@ -29,6 +29,8 @@ export class AppComponent implements OnInit {
   cover: string | null = null;
   pins: {} | null = null;
   shown: string = "off";
+  lastMarker!: MapMarker;
+  lastPlayer!: YT.Player;
 
   @ViewChild(YouTubePlayer) youtubePlayer!: YouTubePlayer;
 
@@ -45,6 +47,25 @@ export class AppComponent implements OnInit {
     streetViewControl: false
   } as google.maps.MapOptions
 
+  defaultIcon = {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: 5,
+    fillColor: "#F00",
+    fillOpacity: 0.9,
+    strokeWeight: 1.5,
+    strokeColor: "#FFF",
+  }
+
+  activeIcon = {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: 8,
+    fillColor: "#F00",
+    fillOpacity: 1,
+    strokeWeight: 5,
+    strokeColor: "#000",
+    strokeOpacity: 0.5
+  }
+
 
   ngOnInit(): void {
 
@@ -54,13 +75,7 @@ export class AppComponent implements OnInit {
             item.option = {
               title: item.title,
               position: {lat: item.lat, lng: item.lng},
-              icon: {
-                path: google.maps.SymbolPath.CIRCLE,
-                scale: 5,
-                fillColor: "#F00",
-                fillOpacity: 0.9,
-                strokeWeight: 0.4
-              }
+              icon: this.defaultIcon
             };
             item.clickable = true;
             item.info = item.title;
@@ -74,11 +89,11 @@ export class AppComponent implements OnInit {
         err => {
           console.log("error:", err);
         }
-      )
+    )
 
-      const tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      document.body.appendChild(tag);
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.body.appendChild(tag);
   }
 
   getFullImageURL(imageSRC: string) {
@@ -100,19 +115,27 @@ export class AppComponent implements OnInit {
     this.shown = "off";
     this.infoWindow.close();
 
+    this.lastMarker.marker?.setIcon(this.defaultIcon);
+
     if (this.youtubePlayer
       && this.youtubePlayer.getPlayerState() === YT.PlayerState.PLAYING) {
-      this.youtubePlayer.stopVideo();
+        this.lastPlayer.stopVideo();
     }
   }
 
   openInfoWindow(markerElement: MapMarker, marker: MarkerObject): void {
 
-    console.log(this.markers);
+    if(this.lastMarker){
+      this.lastMarker.marker?.setIcon(this.defaultIcon);
+    }
+
+    if(this.lastPlayer){
+      this.lastPlayer.playVideo();
+    }
 
     if (this.youtubePlayer
       && this.youtubePlayer.getPlayerState() === YT.PlayerState.PLAYING) {
-      this.youtubePlayer.stopVideo();
+        this.lastPlayer.stopVideo();
     }
 
     this.videoId = marker.videoId;
@@ -123,18 +146,13 @@ export class AppComponent implements OnInit {
 
     this.infoWindow.open(markerElement);
 
-    markerElement.marker?.setIcon({
-      path: google.maps.SymbolPath.CIRCLE,
-      scale: 8,
-      fillColor: "#F00",
-      fillOpacity: 0.9,
-      strokeWeight: 10,
-      strokeColor: "#FFF",
-      strokeOpacity: 0.5
-    })
+    this.lastMarker = markerElement;
+
+    this.lastMarker.marker?.setIcon(this.activeIcon)
 
   }
   onReady(event: YT.PlayerEvent): void {
+    this.lastPlayer = event.target;
     event.target.playVideo();
   }
 
