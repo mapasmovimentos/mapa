@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
   zoom = 4;
 
   options = {
-    mapId: '9488821ae52526f5',
+    mapId: '4c540912e82973d6',
     fullscreenControl: false,
     mapTypeControl: false,
     streetViewControl: false

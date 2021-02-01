@@ -29,12 +29,12 @@ google-map{
 
 content {
   display: block;
-  padding: 10px;
+  padding: 0;
 }
 
 youtube-player {
   height: 100%;
-  width: 80%;
+  width: 100%;
   justify-self: center;
 }
 
@@ -44,36 +44,47 @@ youtube-player {
 }
 
 button {
-  background-color: #fff;
-  border: 1px solid #0363c8;
+  background-color: #F00;
+  border: 1px solid #000;
   border-radius: 3px;
-  color: #0363c8;
+  color: #FFF;
   font-family: inherit;
   font-size: .75rem;
   font-weight: 700;
   padding: .5em 1em;
   text-transform: uppercase;
   cursor: pointer;
-  float: right;
+  position: relative;
+  right: 0;
   display: block;
+  margin: 1em 0 1em 0;
 }
 
 button:hover {
-  background-image: linear-gradient(to right, #0363c8, #0391e2);
+  background-image: linear-gradient(to right, #F00, #740505);
   color: #fff;
 }
 
 .slideout {
-  background: linear-gradient(to bottom, rgba(0, 51, 81, 0.8) 0%, rgba(29, 10, 58, 0.8) 100%);
+  background: linear-gradient(to bottom, rgba(204, 204, 204, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%);
   color: #fff;
   height: 100%;
   min-height: 100%;
-  padding: 1em;
+  padding: 0;
   position: fixed;
-  right: -670px;
+  right: -30vw;
   top: 0;
   transition-duration: 0.2s;
-  width: 670px;
+  width: 30vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .slideout{
+    right: -360px;
+    width: 360px;
+  }
 }
 
 .slideout.on{
@@ -85,4 +96,16 @@ button:hover {
   position: relative;
   display: block;
   margin-top: 50px;
+}
+
+h3{
+  display: block;
+  background-color: #F00;
+  color: #FFF;
+  padding: 1em;
+}
+
+youtube-player iframe{
+  width: 30vw !important;
+  height: 50vh;
 }
