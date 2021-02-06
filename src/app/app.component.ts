@@ -1,7 +1,8 @@
 import { hasLifecycleHook } from '@angular/compiler/src/lifecycle_reflector';
+import { HostListener } from '@angular/core';
 import {Component, OnInit, ViewChild, Injectable} from '@angular/core';
 import {MapInfoWindow, MapMarker, GoogleMap} from '@angular/google-maps';
-import {YouTubePlayer} from '@angular/youtube-player';
+import {YouTubePlayer, YouTubePlayerModule} from '@angular/youtube-player';
 import { MarkerObject } from './models/marker-object.interface';
 import { MapService } from './services/map.service';
 
@@ -19,6 +20,7 @@ import { MapService } from './services/map.service';
 
 export class AppComponent implements OnInit {
 
+
   constructor(private mapService: MapService){}
 
   @ViewChild(MapInfoWindow) infoWindow!: MapInfoWindow;
@@ -31,14 +33,24 @@ export class AppComponent implements OnInit {
   shown: string = "off";
   lastMarker!: MapMarker;
   lastPlayer!: YT.Player;
+  status: boolean | undefined;
 
   @ViewChild(YouTubePlayer) youtubePlayer!: YouTubePlayer;
+
+  @HostListener('window:resize', ['$event'])
 
   markers: MarkerObject[] = [];
 
   info: string | null = null;
   center = {lat: -15.7904734, lng: -47.9441261};
   zoom = 4;
+
+  playerVars = {
+    controls: 1,
+    modestbranding: 1,
+    rel: 0,
+    showInfo: 0
+  }
 
   options = {
     mapId: '4c540912e82973d6',
@@ -66,6 +78,7 @@ export class AppComponent implements OnInit {
     strokeOpacity: 0.5
   }
 
+  public videoHeight: any;
 
   ngOnInit(): void {
 
@@ -151,6 +164,7 @@ export class AppComponent implements OnInit {
     this.lastMarker.marker?.setIcon(this.activeIcon)
 
   }
+
   onReady(event: YT.PlayerEvent): void {
     this.lastPlayer = event.target;
     event.target.playVideo();

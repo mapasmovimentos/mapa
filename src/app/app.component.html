@@ -6,15 +6,88 @@
               ></map-marker>
   <map-info-window (closeclick)="slideOut()">{{info}}</map-info-window>
 </google-map>
+<div id="pencet" (click)="status=!status" [ngClass]="status ? 'Diam' : ''">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+<div id="navigation" [ngClass]="status ? 'on' : ''">
+      <!--  -->
+  <div class="menu">
+        <div class="menu__container">
+          <div class="menu__about-container">
+             <h1 class="menu__title">mapas-movimentos:
+               <span>articulações entre pesquisa-intervenção-ensino</span>
+             </h1>
+             <p class="menu__description">
+             Este site é parte da pesquisa de doutorado em arquitetura e urbanismo [iau usp], mapas-movimentos: [outros] funcionamentos de sistemas cartográficos em leituras de deslocamentos urbanos, coordenada pelo prof. me. gabriel ramos [ufg | regional goiás] e orientada pelo prof. dr. david sperling [nec | iau usp], e é, também, o produto coletivo do projeto de pesquisa, ensino e extensão cartografias de deslocamentos do território urbano contemporâneo [ufg | regional goiás], que envolve discentes vinculados a variados cursos de graduação e pós-graduação de diversas instituições públicas e privadas de ensino superior de todo brasil. a pesquisa investiga deslocamentos, compreendendo-os tanto nos modos de acepção de um sujeito incorporado em plataformas mediadas, por meio de deambulações e deslizamentos em sistemas cartográficos, quanto de sentidos, num mundo continuamente em deslocamento .
+             </p>
+             <div class="menu__info-container">
+                <!-- <p class="menu__info">Curated by Eric R. Mortensen x Skinny Ships<br><br>Website by <a href="http://joeymaese.com" target="_blank">Joey Maese</a><br><br>Questions? <a href="mailto:ericrmortensen@gmail.com" target="_blank">Contact Us</a></p> -->
+                <p>Organização, coordenação e supervisão</p>
+                <ul>
+                  <li>Gabriel Ramos e David Sperling</li>
+                </ul>
 
+                <p>Apoio</p>
+                <img src="https://lh4.googleusercontent.com/35ne2G4CRW12Z0LOtQGXOMGivbR7jxmdT3xuiOdzioxJXRJDKnKwi1S-YFCgvBkEZIVT0qSCWB8PSEl8ky1QTPjyFfzn7Wco5hTaafLBDSJ0UFObvrY=w1280" />
+                <img src="https://lh4.googleusercontent.com/MPl8FUnaIIbdK9tm4JI3arQTdLc2Ll_WAaNrLIlGx40YfMYEmDrZkzJaMLuSjpHZxMkaVBs=w1280" />
+                <img src="https://lh5.googleusercontent.com/_qDfinn8_ZSmIl4eegYI166dM1faaSCjL_8dUxynEgUVsb1P8SteqcK6rUDGxWGrdiW7N3agWyFjoeXVybUz0pbgnI9MCnOzpEfW4I2Iqs9TQrgCoA=w1280" />
+             </div>
+          </div>
+          <div class="list-grid menu-parent">
+             <h1 class="list-grid__title">participação e colaboração</h1>
+             <ul>
+              <li>André Luiz Tonelli <span>[Viana-ES/ Geografia / UFES]</span></li>
+              <li>Angélica Foganholi Rui <span>[São Francisco do Sul-SC/ Arquitetura e Urbanismo / Cátolica-SC]</span></li>
+              <li>Bárbara Cristina dos Santos Lino <span>[Recife-PE / Arquitetura e Urbanismo / UFPE-FUNDAJ]</span></li>
+              <li>Beatriz Rezende Gonçalves <span>[Goiânia-GO / Arquitetura e Urbanismo / UFG-Goiânia]</span></li>
+              <li>Bianca Purkott Cezar <span>[Campo Grande-MS / Arquitetura e Urbanismo / UFMS]</span></li>
+              <li>Bruna Helena de Matos <span>[Ribeirão Pires-SP / Arquitetura e Urbanismo / Mackenzie-SP]</span></li>
+              <li>Camila Maciel Fernandes <span>[Caruaru-PE / Arquitetura e Urbanismo / UNIFAVIP]</span></li>
+              <li>Camilla Silva Duarte <span>[São Paulo-SP/ Arquitetura e Urbanismo / USP]</span></li>
+              <li>Camila Batista Reis <span>[Brasília-DF / Arquitetura e Urbanismo / UnB]</span></li>
+              <li>Camilla Soares da Silva <span>[Campos dos Goytacazes-RJ / Geografia /IFF]</span></li>
+              <li>Caroline Belló <span>[Curitiba-PR / Arquitetura e Urbanismo / FAE]</span></li>
+              <li>Clara Letícia Gomes Zanetti <span>[Campo Grande-MS / Arquitetura e Urbanismo / UFMS]</span></li>
+              <li>Danielle Sousa Vale <span>[Goiânia-GO / Arquitetura e Urbanismo / UFG-Goiânia]</span></li>
+              <li>Danilo Ribeiro Stavale <span>[São Paulo-SP / Letras / UNIVESP]</span></li>
+              <li>Débora Cristina Marcelino dos Santos <span>[São Carlos-SP / Arquitetura e Urbanismo / IAU-USP]</span></li>
+              <li>Gabriel Ferreira Fernandes <span>[Rio de Janeiro-RJ / Arquitetura e Urbanismo / FAU - UFRJ]</span></li>
+              <li>Helena de Oliveira Contrera Toro <span>[São Paulo-SP/ Artes Visuais / ECA-USP]</span></li>
+              <li>Iarykthcia Marques Geromin <span>[São João del-Rei-MG / Arquitetura e Urbanismo / Unipac - Barbacena]</span></li>
+              <li>Kauan Weslley Nicholas de Souza <span>[São Paulo-SP / Ciências Sociais / FFLCH-USP]</span></li>
+              <li>Leonardo dos Santos <span>[Curitiba-PR/ Arquitetura e Urbanismo / FAE]</span></li>
+              <li>Ligia Teixeira Sato <span>[São Paulo-SP / Design / FAU USP]</span></li>
+              <li>Luan Colares Figueiredo <span>[Macapá-AP / Arquitetura e Urbanismo / UNIFAP]</span></li>
+              <li>Lucas Italo Silva Ribeiro <span>[Goiânia-GO / Arquitetura e Urbanismo / UFG - Goiás ]</span></li>
+              <li>Maria Aparecida da Silva <span>[São Paulo-SP / Arquitetura e Urbanismo / Estácio de Sá-SP]</span></li>
+              <li>Mateus Agostinho Castro <span>[Garça-SP / Arquitetura e Urbanismo / UFMS]</span></li>
+              <li>Natália Freitas Santos <span>[Campinas-SP / Arquitetura e Urbanismo / Unicamp]</span></li>
+              <li>Priscila Junqueira de Souza <span>[Campo Grande-MS / Arquitetura e Urbanismo / UFMS]</span></li>
+              <li>Shayanne Martins Guimarães Cândido <span>[Campinas-SP /Arquitetura e Urbanismo / USF]</span></li>
+              <li>Stéfanny Ferreira Dias <span>[Goiânia-GO/ Geografia / UFG-Goiânia]</span></li>
+              <li>Tais Beltrame dos Santos <span>[Pelotas-RS / PROGRAU / UFPel]</span></li>
+              <li>Tatiana Silva Scher <span>[Salvador-BA / Artes visuais / UFBA]</span></li>
+              <li>Victoria Silva Carvalho <span>[Porto Alegre-RS/ Arquitetura e Urbanismo - Unisinos-PoA]</span></li>
+            </ul>
+           </div>
+       </div>
+  </div>
+
+</div>
 <content class="slideout {{shown}}">
   <button (click)="slideOut()">Fechar</button>
-  <h3>{{info}}</h3>
-  <youtube-player (ready)="onReady($event)" (stateChange)="onStateChange($event)"
-                *ngIf="videoId"
+  <h4>{{info}}</h4>
+  <div *ngIf="videoId" class="player">
+    <youtube-player (ready)="onReady($event)" (stateChange)="onStateChange($event)"
                 [videoId]="videoId"
-                height="380px"
-                width="100%"></youtube-player>
+                width="100%"
+                suggestedQuality="highres"
+                frameborder="0"
+                [playerVars]="playerVars"
+                ></youtube-player>
+  </div>
   <img class="pin-img" *ngIf="cover" [src]="cover" />
   <div class="pin-info" *ngIf="html" [innerHTML]="html"></div>
 </content>

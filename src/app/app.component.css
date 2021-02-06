@@ -1,23 +1,19 @@
-:host {
-  font-family: -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen-Sans,
-    Ubuntu,
-    Cantarell,
-    "Helvetica Neue",
-    sans-serif;
+@import "./styles/reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+@import "./styles/menu.css";
+@import "./styles/slideout.css";
+
+
+ :host {
+    font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.5;
-    overflow: hidden;
+    /* overflow: hidden; */
     padding: 0;
+    /* color: #fff; */
 }
 
 ul, ol{
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  display: block !important;
+  list-style: none;
   list-style-position: inside;
 }
 
@@ -30,82 +26,5 @@ google-map{
 content {
   display: block;
   padding: 0;
-}
-
-youtube-player {
-  height: 100%;
-  width: 100%;
-  justify-self: center;
-}
-
-.pin-img{
-  display: block;
-  height: 200px;
-}
-
-button {
-  background-color: #F00;
-  border: 1px solid #000;
-  border-radius: 3px;
-  color: #FFF;
-  font-family: inherit;
-  font-size: .75rem;
-  font-weight: 700;
-  padding: .5em 1em;
-  text-transform: uppercase;
-  cursor: pointer;
-  position: relative;
-  right: 0;
-  display: block;
-  margin: 1em 0 1em 0;
-}
-
-button:hover {
-  background-image: linear-gradient(to right, #F00, #740505);
-  color: #fff;
-}
-
-.slideout {
-  background: linear-gradient(to bottom, rgba(204, 204, 204, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%);
-  color: #fff;
-  height: 100%;
-  min-height: 100%;
-  padding: 0;
-  position: fixed;
-  right: -30vw;
-  top: 0;
-  transition-duration: 0.2s;
-  width: 30vw;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-@media only screen and (max-width: 600px) {
-  .slideout{
-    right: -360px;
-    width: 360px;
-  }
-}
-
-.slideout.on{
-  right: 0;
-}
-
-.pin-info {
-  padding: 2%;
-  position: relative;
-  display: block;
-  margin-top: 50px;
-}
-
-h3{
-  display: block;
-  background-color: #F00;
-  color: #FFF;
-  padding: 1em;
-}
-
-youtube-player iframe{
-  width: 30vw !important;
-  height: 50vh;
+  z-index: 1;
 }
