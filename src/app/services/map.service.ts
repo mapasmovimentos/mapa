@@ -11,14 +11,9 @@ export class MapService {
 
   }
 
-  baseUrl: string = 'https://www.mapasmovimentos.com/_functions/api/';
+  baseUrl: string = 'https://gabrieltramos0.wixsite.com/website/_functions/api/';
 
   getWixPins() {
     return this.http.get(this.baseUrl+'Pins');
   }
-
-  getMapConfig() {
-    return this.http.get(this.baseUrl+'mapconfig');
-  }
-
 }
