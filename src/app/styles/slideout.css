@@ -98,7 +98,6 @@
   .slideout button:focus {
     top: 0.5em;
     right: 1em;
-    position: fixed;
     z-index: 3;
   }
   .slideout h4 {
@@ -119,8 +118,8 @@
 
 @media screen and (min-width: 1000px) {
   .slideout{
-    width: 30vw;
-    right: -30vw;
+    width: 60vw;
+    right: -60vw;
   }
   .slideout .player{
     height: 320px;
