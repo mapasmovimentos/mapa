@@ -61,11 +61,11 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mapamovimentos:build"
+            "browserTarget": "mapasmovimentos:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mapamovimentos:build:production"
+              "browserTarget": "mapasmovimentos:build:production"
             }
           }
         },
@@ -83,16 +83,16 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "https://joilsonmarques.github.io/mapamovimentos/",
-            "name": "Mapa Movimentos",
+            "baseHref": "https://joilsonmarques.github.io/mapasmovimentos/",
+            "name": "Mapas Movimentos",
             "email": "joilsonmarques@gmail.com",
-            "cname": "mapa.mapamovimentos.com"
+            "cname": "mapa.mapasmovimentos.com"
           }
         }
       }
     }
   },
-  "defaultProject": "mapamovimentos",
+  "defaultProject": "mapasmovimentos",
   "cli": {
     "analytics": "653f0b35-f878-4687-b921-64f42016c526"
   }
