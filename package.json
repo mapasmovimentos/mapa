@@ -1,12 +1,12 @@
 {
-  "name": "mapamovimentos",
+  "name": "mapa-movimentos",
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-prod": "ng build --prod --base-href /mapamovimentos/",
-    "postbuild-prod": "bread-compressor dist/mapamovimentos",
+    "build-prod": "ng build --prod --base-href /mapa/",
+    "postbuild-prod": "bread-compressor dist/mapa",
     "lint": "ng lint"
   },
   "private": true,
