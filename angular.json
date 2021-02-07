@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "locationvideo": {
+    "mapamovimentos": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/locationvideo",
+            "outputPath": "dist/mapamovimentos",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -61,11 +61,11 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "locationvideo:build"
+            "browserTarget": "mapamovimentos:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "locationvideo:build:production"
+              "browserTarget": "mapamovimentos:build:production"
             }
           }
         },
@@ -79,11 +79,20 @@
               "**/node_modules/**"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://joilsonmarques.github.io/mapamovimentos/",
+            "name": "Mapa Movimentos",
+            "email": "joilsonmarques@gmail.com",
+            "cname": "mapa.mapamovimentos.com"
+          }
         }
       }
     }
   },
-  "defaultProject": "locationvideo",
+  "defaultProject": "mapamovimentos",
   "cli": {
     "analytics": "653f0b35-f878-4687-b921-64f42016c526"
   }

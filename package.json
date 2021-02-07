@@ -1,12 +1,12 @@
 {
-  "name": "locationvideo",
+  "name": "mapamovimentos",
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-prod": "ng build --prod --base-href /locationvideo/",
-    "postbuild-prod": "bread-compressor dist/locationvideo",
+    "build-prod": "ng build --prod --base-href /mapamovimentos/",
+    "postbuild-prod": "bread-compressor dist/mapamovimentos",
     "lint": "ng lint"
   },
   "private": true,
@@ -32,8 +32,9 @@
     "@angular/cli": "latest",
     "@angular/compiler-cli": "latest",
     "@angular/language-service": "latest",
-    "@types/node": "latest",
     "@types/googlemaps": "3.43.2",
+    "@types/node": "latest",
+    "angular-cli-ghpages": "^1.0.0-rc.1",
     "bread-compressor-cli": "latest",
     "codelyzer": "latest",
     "tslint": "latest",
