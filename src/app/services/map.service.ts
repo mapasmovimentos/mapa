@@ -11,7 +11,7 @@ export class MapService {
 
   }
 
-  baseUrl: string = 'https://www.mapasmovimentos.com/_functions/api/Pins';
+  baseUrl: string = 'https://www.mapasmovimentos.com/_functions/api/';
 
   getWixPins() {
     return this.http.get(this.baseUrl+'Pins');
