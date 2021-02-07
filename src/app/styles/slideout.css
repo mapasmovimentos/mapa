@@ -74,7 +74,7 @@
   padding: 0;
   position: relative;
   display: block;
-  margin-top: 1em;
+  margin: 1em 0 1em 0;
 }
 
 
@@ -108,7 +108,6 @@
   .slideout h4 {
     margin-top: 2.5em;
   }
-
 }
 
 /*Tablets*/
@@ -123,20 +122,10 @@
   }
 }
 
-/*Monitores pequenos*/
-@media screen and (min-width: 992px) {
-  .slideout{
-    right: -360px;
-    width: 360px;
-    background-color: blue;
-  }
-}
-
 @media screen and (min-width: 1000px) {
   .slideout{
-    width: 40vw;
-    right: -40vw;
-    background-color: greenyellow;
+    width: 50vw;
+    right: -50vw;
   }
   .slideout .player{
     height: 320px;
