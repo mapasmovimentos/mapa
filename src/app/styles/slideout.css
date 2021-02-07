@@ -19,7 +19,8 @@
 
 .slideout button,
 .slideout button:active,
-.slideout button:focus {
+.slideout button:focus,
+.slideout button:hover {
   width: 80px;
   background-color:#f00;
   border: none;
@@ -35,9 +36,6 @@
   display: block;
   margin: 0.5em 0 1em 0;
   outline: none;
-}
-.slideout button:hover {
-  background-color: #740505;
 }
 
 .slideout h4{
@@ -83,7 +81,6 @@
   .slideout{
     width: 100vw;
     right: -100vw;
-    position: absolute;
   }
   .slideout.on:before{
     content: "";
@@ -115,7 +112,6 @@
   .slideout{
     width: 60vw;
     right: -60vw;
-    position: absolute;
   }
   .slideout.on:before{
     display: none;

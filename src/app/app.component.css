@@ -7,9 +7,18 @@
  :host {
     font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.5;
-    overflow-x: hidden;
+    overflow: hidden;
     padding: 0;
-    /* color: #fff; */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  border: 1px solid red;
 }
 
 ul, ol{
