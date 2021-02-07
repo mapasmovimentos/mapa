@@ -11,7 +11,7 @@ export class MapService {
 
   }
 
-  baseUrl: string = 'https://joilsonmarques.wixsite.com/mysite/_functions-dev/api/';
+  baseUrl: string = 'https://www.mapasmovimentos.com/_functions/api/Pins';
 
   getWixPins() {
     return this.http.get(this.baseUrl+'Pins');
