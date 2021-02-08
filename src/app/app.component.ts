@@ -53,7 +53,7 @@ export class AppComponent implements OnInit {
   }
 
   options = {
-    mapId: '4c540912e82973d6',
+    mapId: '65f2ef8b09b3b807',
     fullscreenControl: false,
     mapTypeControl: false,
     streetViewControl: false
